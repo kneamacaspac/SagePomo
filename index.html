@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sage Pomo</title>
+    <link rel="icon" type="image/png" href="assets/witchHatIcon.png">
+    <script src="javascripts/timer.js" defer></script>
+    <script src="javascripts/picnQuote.js" defer></script>
+    <script src="javascripts/calendar.js" defer></script>
+    <script src="javascripts/musicPlayer.js" defer></script>
+    <script src="javascripts/notesPage.js" defer></script>
+    <script src="javascripts/todoPage.js" defer></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calendarStyle.css">
+    <link rel="stylesheet" href="css/musicPlayer.css">
+    <link rel="stylesheet" href="css/navigationBar.css">
+    <link rel="stylesheet" href="css/notesPage.css">
+    <link rel="stylesheet" href="css/todoPage.css">
+    <link rel="stylesheet" href="css/verticalTimer.css">
+</head>
+
+<body>
+  <!--NAVIGATION BAR-->
+  <div class="navbar" id="navigbar">
+    <div class="navbarButton" id="notesButton"><img src="assets/buttonsSvg/notepad.svg"></div>
+    <div class="navbarButton" id="customButton"><img src="assets/buttonsSvg/theme.svg"></div>
+    <div class="navbarButton" id="tasksButton"><img src="assets/buttonsSvg/tasks.svg"></div>
+    <div class="navbarButton" id="aboutButton"><img src="assets/buttonsSvg/about.svg"></div>
+    <div class="navbarButton" id="pomodoroButton"><img src="assets/buttonsSvg/timer.svg"></div>
+  </div>
+
+  <!--CONTAINER FOR POMO + POMO MODE BUTTONS-->
+  <div class="folderBg">
+    
+    <div id="pomodoroElements">
+
+      <div id="pomodoroHeader">
+        <h1>Lemoneyd's Pomodoro</h1>
+      </div>
+
+  <!--POMODORO TIMER-->
+  <div class="pomoContainer">
+    <div id="editTimerButton"><img id="imgEditTimer" src="assets/buttonsSvg/pen.svg"></object></div>
+      <object id="pomoSvg" type="image/svg+xml" data="assets/pomoContainer.svg"></object>
+      <div id="pomoTxt"></div>
+      <div class="pomoButtons">
+        <div id="resetButton"><img src="assets/buttonsSvg/resetButton.svg"></div>
+        <div id="playButton"><img src="assets/buttonsSvg/playButton.svg"></div>
+        <div id="addButton"><img src="assets/buttonsSvg/addButton.svg"></div>
+      </div>
+  
+  </div>
+
+
+  <!--POMODORO SETTINGS PANEL-->
+  <div class="editTimerPanel">
+    <div id="closeEditTimer"></div>
+    <h3 id="editTimerTitle">Edit Pomodor Timer</h3>
+    <h4 id="minutesHeader">Timer (Minutes)</h4>
+    <div id="numInputContainer">
+      <input id="focusInput" type="number">
+      <input id="shortInput" type="number">
+      <input id="longInput" type="number">
+    </div>
+    <div id="inputLabelContainer">
+        <div>Focus</div>
+        <div>Short Break</div>
+        <div>Long Break</div>
+    </div>
+    <div id="pomoOptions">
+      <h4>Use the Pomodoro Sequence:</h4>
+      <h5>25 minutes of focused work, then a 5-minute break, repeated four times before taking a longer break.</h2>
+      <label class="switch">
+        <input type="checkbox" id="pomoSequenceToggle" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+      <div id="saveTimerButton">save</div>
+  </div>
+
+    <div class="pomoModeButtons">
+        <div id="focusModeButton">
+          Focus
+          <label><input type="radio" name="mode" value="focus"></label>
+        </div>
+        <div id="shortBModeButton">
+          Short Break
+          <label><input type="radio" name="mode" value="short"></label>
+        </div>
+        <div id="longBModeButton">
+          Long Break
+          <label><input type="radio" name="mode" value="long"></label>
+        </div>
+    </div>
+
+    <div id="lowerPartPomo">
+    <!--RANDOM QUOTES-->
+    <div id="customedDiv">
+      <div id="customContent">“Talent is cheaper than table salt. What separates the talented individual from the successful one is a lot of hard work.” — Stephen King</div>
+    </div>
+
+    <!--PHOTO DISPLAY-->
+    <div id="photoContainer">
+      <img id="imgInPhotoCon" src="assets/cat.jpg">
+      <input type="file" id="fileInput" accept="image/*" style="display:none">
+      <div id="editPhotoButton">Edit</div>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- NOTES PAGE -->
+    <div class="notesContainer" id="notesPage">
+        <h2>Notes</h2>
+
+        <textarea id="notesArea" placeholder="Write your notes here..."></textarea>
+
+        <div class="notesActions">
+          <button id="saveNotes">Save</button>
+          <button id="backToPomo">Back</button>
+        </div>
+    </div>
+
+<!-- TO DO LIST PAGE -->
+<div class="todoContainer" id="todoPage" style="display:none;">
+  <h2>Tasks</h2>
+
+  <div class="todoInput">
+    <input type="text" id="todoInput" placeholder="Add a Task">
+    <button id="addTodo">Add</button>
+  </div>
+
+  <ul id="todoList"></ul>
+</div>
+
+<!-- FINISHED TASKS HISTORY -->
+<div class="todoHistory" id="todoHistoryPage" style="display:none;">
+  <h2>Finished Tasks</h2>
+  <ul id="historyList"></ul>
+
+  <div class="todoActions">
+    <button id="clearHistory">Clear History</button>
+    <button id="backToTodo">Back</button>
+  </div>
+</div>
+
+<!--ABOUT PAGE-->
+<div id="aboutContainer" style="display: none;">
+  <h2>Introduction</h2>
+  <h3>Welcome to [Your Website Name], your friendly companion for focused work and study. This website is designed to help you manage your time efficiently, stay on track with tasks, and make productivity feel achievable and even enjoyable.</h3>
+  <h2>What Is the Pomodoro Technique?</h2>
+  <h3>The Pomodoro Technique is a simple time-management method that uses focused work intervals—typically 25 minutes—followed by short breaks. By breaking work into manageable chunks, it helps improve concentration, reduce burnout, and make large tasks feel less overwhelming.</h3>
+  <h2>Why This Pomodoro Website</h2>
+  <h3>This website was created to provide a minimal, distraction-free, and user-friendly experience for anyone who wants to stay productive. Unlike cluttered tools, it focuses on what truly matters: helping you track your tasks, manage your time, and maintain consistent focus without unnecessary complications.</h3>
+  <h2>Additional Features</h2>
+  <h3>Notes: Quickly jot down ideas or reminders without leaving the website.
+    <br>To-Do List: Organize your tasks and check them off as you complete them.
+    <br>Theme Control: Customize your experience with light or dark themes to match your preference and mood.</h3>
+    <h2>About the Developer</h2>
+    <h3>Hi! I’m [Your Name], a student passionate about coding, design, and productivity tools. I built this website to share my love for simple, effective tools that make studying and working more manageable. My goal is to help you focus better and get more done, one Pomodoro at a time.</h3>
+</div>
+
+<!--VERTICAL TIMER-->
+    <div class="timer-container">
+      <div class="timer-fill" id="timerFill"></div>
+    </div>
+
+
+
+  <!--MUSIC PLAYER-->
+  <!--SPOTIFY MUSIC PLAYER-->
+  <div class="spotifyMusicPlayer" id="spotifyContainer">
+    <h2>Play Music</h2>
+    <iframe id="spotifyLink" data-testid="embed-iframe" style="border-radius:20px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWSFWSTYGmXDl?utm_source=generator&theme=0" width="95%" height="300px" frameBorder="" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div id="localMusicBut">local music</div>
+    <div id="spotifySettingButton">settings</div>
+  </div>
+
+  <!--LOCAL MUSIC PLAYER-->
+  <div class="localMusicPlayer" id="localContainer">
+    <div class="musicPlayerBody">
+
+        <!-- SONG COVER + CONTROLS -->
+        <div class="nowPlaying">
+            <img id="songCover" src="assets/musicCovers/musicCover1.jpg" alt="Cover">
+
+            <audio id="audio"></audio>
+
+            <!-- Progress bar -->
+            <input type="range" id="progress" value="0">
+            
+            <div class="songInfo">
+                <div id="songTitle">Song Title</div>
+                <div id="songArtist">Artist</div>
+            </div>
+
+            <div class="controls">
+              <button id="loop"><img src="assets/buttonsSvg/loop.svg"></button>
+              <button id="prev"><img src="assets/buttonsSvg/prevMusic.svg"></button>
+              <button id="play"><img src="assets/buttonsSvg/playMusic.svg"></button>
+              <button id="next"><img src="assets/buttonsSvg/nextMusic.svg"></button>
+              <button id="list"><img src="assets/buttonsSvg/list.svg"></button>
+
+        <ul id="playlist" class="hidden">
+          <li data-index="0">Song 1</li>
+          <li data-index="1">Song 2</li>
+          <li data-index="2">Song 3</li>
+          <li data-index="3">Song 4</li>
+        </ul>
+            </div>
+
+            <select id="playlistList">
+              <option value="cozyJazz">Cozy Jazz</option>
+              <option value="natureSounds">Nature Sounds</option>
+              <option value="lofiMix">Lofi Study Mix</option>
+              <option value="softPiano">Soft Piano</option>
+            </select>
+
+        </div>
+
+    </div>
+
+    <div id="spotifySwitchButton">Spotify Player</div>
+    <div id="localMusicSettingButton"></div>
+    
+  </div>
+
+  <!--MUSIC SETTINGS-->
+  <div class="editMusic">
+    <h1>Music Player Setting</h1>
+    <label><input id="spotifyModeRadio" type="radio" name="playlist" value="spotify"></label>
+    <h2 id="spotRadioLabel">Spotify Playlist</h2>
+    <h2 id="linkLabel">Paste spotify playlist link:</h2>
+    <input type="text" id="linkInput">
+    <p>Note: In this mode, volume cannot be adjusted from this web, but can be adjusted with computer volume</p>
+    <label><input id="localModeRadio" type="radio" name="playlist" value="localMusic"></label>
+    <h2 id="localRadioLabel">Local Playlist</h2>
+    <h3>Choose playlist:</h3>
+    
+    <div class="playlist-grid">
+      <button class="playlist-btn" data-playlist="cozy">Cozy Jazz</button>
+      <button class="playlist-btn" data-playlist="nature">Nature Sounds</button>
+      <button class="playlist-btn" data-playlist="lofi">Lofi Study Mix</button>
+      <button class="playlist-btn" data-playlist="piano">Soft Piano</button>
+    </div>
+
+    <button id="uploadMusicButton">Upload your own music</button>
+    <div id="saveMusicButton">save</div>
+    <div id="closeEditMusic"></div>
+  </div>
+
+  <!--THEME PANEL-->
+
+  <!--ABOUT PAGE-->
+
+  <!--GENERAL SETTINGS-->
+
+  <!--CLOCK-->
+  <div id="time">01:47</div>
+
+  <object id="clockIcon" type="image/svg+xml" data="assets/clockIcon.svg"></object>
+
+  <!--CALENDAR-->
+  <div class="calendar" id="cal">
+    <div class="header"></div>
+  </div>
+
+  <div class="calendar">
+  <div class="calendar-header">
+    <button id="prevMonth">&#8249;</button>
+    <h3 id="monthYear"></h3>
+    <button id="nextMonth">&#8250;</button>
+  </div>
+  <div class="calendar-weekdays">
+    <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+  </div>
+  <div class="calendar-days" id="calendarDays"></div>
+</div>
+
+</body>
+</html>

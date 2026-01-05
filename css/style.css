@@ -1,0 +1,506 @@
+body {
+  background-image: url("../assets/bg.png");
+  display: flex;
+  justify-content: center;  
+  align-items: center;   
+  height: 100vh;         
+  margin: 0;   
+}
+
+#pomodoroHeader {
+  position: absolute;
+  width: 900px;
+  top: 55px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--button-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  color: white;
+  font-family: "Kodchasan", sans-serif;
+  font-style: bold;
+}
+
+/*POMODORO TIMER AND OTHER COMPONENTS*/
+.folderBg {
+  width: 950px;   
+  height: 655px; 
+  border-radius: 30px;
+  position: absolute;
+  background-color: var(--main-color);
+  top: 25px;        
+  left: 155px;  
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+}
+
+.pomoContainer {
+  height: 225px;
+  width: 899px;
+  position: absolute;
+  top: 270px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;    
+  align-items: center; 
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+}
+
+#pomoSvg {
+  height: auto;
+  width: 900px;
+  position: relative;
+  text-align: center;
+  z-index: 10;
+}
+
+#pomoTxt {
+  font-size: 8em;
+  color: var(--text-color);
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Kodchasan", sans-serif;
+  font-style: bold;
+  z-index: 25;
+}
+
+#pomoTxt:hover {
+  user-select: none;
+}
+
+.pomoButtons {
+  height: 40px;
+  width: 165px;
+  position: absolute;
+  top: 185px;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: row;    
+  align-items: center;    
+  gap: 15px;
+}
+
+#playButton, #resetButton, #addButton {
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+  position: relative;
+  display: flex;
+}
+
+#playButton:hover, #resetButton:hover, #addButton:hover {
+  background-color: var(--control-hover);
+}
+
+#playButton:active, #resetButton:active, #addButton:active{
+  transform: scale(.9);
+}
+
+.pomoButtons img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+}
+
+.pomoModeButtons {
+  height: 30px;
+  width: 510px;
+  position: absolute;
+  top: 128px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 22;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+#focusModeButton, #shortBModeButton, #longBModeButton {
+  height: 30px;
+  width: 150px;
+  border-radius: 30px;
+  background-color: var(--button-color);
+  border-radius: 30px;
+  flex-shrink: 0;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+  position: relative;
+  display: flex;
+
+  color: var(--text-color);
+  font-size: 1.25em;
+  font-family: "Kodchasan", sans-serif;
+  font-style: bold;
+  justify-content: center;
+}
+
+#focusModeButton label, #shortBModeButton label, #longBModeButton label {
+  display: none;
+}
+
+#focusModeButton:hover, #shortBModeButton:hover, #longBModeButton:hover{
+  background-color: var(--button-hover);
+  cursor: pointer;
+  user-select: none;
+}
+
+#focusModeButton:active, #shortBModeButton:active, #longBModeButton:active{
+  background-color: var(--button-hover);
+  transform: scale(.98);
+  box-shadow: none;
+}
+
+#editTimerButton{
+  width: 38px;
+  height: 38px;
+  background-color: var(--main-color);
+  z-index: 30;
+  position: absolute;
+  left: 852px;
+  top: 10px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+  display: flex;
+  flex-direction: row;
+}
+
+#editTimerButton:hover {
+  background-color: var(--button-color);
+}
+
+#editTimerButton:active {
+  transform: scale(.9);
+}
+
+#editTimerButton img {
+  transform: scale(1.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#lowerPartPomo {
+  position: absolute;
+  height: 230px;
+  width: 950px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  top: 405px;
+}
+
+/*RANDOM QUOTE GENERATOR*/
+#customedDiv {
+  width: 580px;
+  height: 230px;
+  background-color: var(--button-color);
+  border-radius: 30px;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+}
+
+#customContent{
+  color: var(--text-color);
+  font-size: 1.5em;
+  font-family: "Kodchasan", sans-serif;
+  position: relative;
+  text-align: center;
+}
+
+/*PHOTO DISPLAY*/
+#photoContainer {
+  width: 300px;
+  height: 230px;
+  background-color: white;
+  border-radius: 30px;
+  z-index: 15;
+  outline: 2px solid var(--button-color);
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+}
+
+#imgInPhotoCon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+#editPhotoButton {
+  width: 80px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: var(--main-color);
+  top: -45px;
+  left: 210px;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+
+  position: relative;
+  display: flex;
+  color: var(--text-color);
+  font-size: 1.23em;
+  padding-top: 2px;
+  font-family: "Kodchasan", sans-serif;
+  font-style: bold;
+  justify-content: center;
+}
+
+#editPhotoButton:hover{
+  user-select: none;
+  background-color: var(--button-hover);
+}
+
+#editPhotoButton:active {
+  transform: scale(.9);
+
+}
+
+/*Edit Timer Panel*/
+.editTimerPanel {
+  width: 500px;
+  height: 350px;
+  background-color: #939393;
+  position: absolute;
+  z-index: 29;
+  border-radius: 30px;
+  display: none;
+  flex-direction: row;
+  gap: 10px;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+}
+
+#closeEditTimer {
+  width: 38px;
+  height: 38px;
+  background-color: var(--button-color);
+  z-index: 30;
+  position: relative;
+  top: 15px;
+  left: 450px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+  display: flex;
+  flex-direction: row;
+}
+
+#closeEditTimer:active {
+  transform: scale(.98);
+  box-shadow: none;
+}
+
+#closeButton:hover {
+  user-select: none;
+  background-color: var(--button-hover);
+}
+
+.editTimerPanel #editTimerTitle{
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  font-size: 2em;
+  color: var(--text-color);
+  font-family: "Kodchasan", sans-serif;
+  font-weight: bold;
+  text-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+}
+
+#numInputContainer {
+  height: 70px;
+  width: 400px;
+  color: var(--control-hover);
+  position: absolute;
+  top: 105px;
+  left: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+#numInputContainer input {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+#inputLabelContainer {
+  height: 30px;
+  width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 43px;
+  left: 3px;
+  top: 135px;
+}
+
+#inputLabelContainer div {
+  position: relative;
+  color: var(--control-hover);
+  width: 105px;
+  top: 0;
+  font-family: "Kodchasan", sans-serif;
+  font-size: 1em;
+  justify-content: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.editTimerPanel h2 {
+  color: var(--main-color);
+  flex-shrink: 0;
+  padding-left: 10px;
+  position: relative;
+  top: 200px;
+}
+
+#minutesHeader {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+}
+
+#pomoOptions {
+  position: absolute;
+  height: 100px;
+  width: 450px;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#pomoOptions h5 {
+  position: absolute;
+  color: #2d2d2d;
+  width: 400px;
+  top: 30px;
+  left: 72px;
+}
+
+.switch {
+  position: absolute;
+  top: 53px;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#saveTimerButton {
+  width: 100px;
+  height: 38px;
+  background-color: var(--button-color);
+  color: white;
+  z-index: 30;
+  position: absolute;
+  top: 310px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+#saveTimerButton:active {
+  transform: translate(-50%, -50%) scale(0.98);
+  box-shadow: none;
+}
+
+#saveTimerButton:hover {
+  user-select: none;
+  background-color: var(--button-hover);
+}
+
+/*CLOCK*/
+#time {
+    position: absolute;
+    top: 365px;
+    left: 1220px;
+    font-size: 70px;
+    color: var(--text-color);
+}
+
+#clockIcon {
+  position: absolute;
+  top: 365px;
+  left: 1425px;
+}
+
+

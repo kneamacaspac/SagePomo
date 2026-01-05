@@ -1,0 +1,72 @@
+/*I also added the about page in this file*/
+
+.notesContainer {
+    width: 1000px;   
+    height: 690px; 
+    position: absolute;
+    top: 5px;        
+    left: 165px;  
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Kodchasan', sans-serif;
+    z-index: 999;
+    display: none;
+}
+
+#notesArea {
+    position: absolute;
+    width: 940px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    height: 400px;
+    resize: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.notesActions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+#aboutContainer {
+    width: 960px;   
+    height: 480px; 
+    position: absolute;
+    top: 50px;
+    overflow: auto; 
+    left: 165px;
+    z-index: 999;
+    padding: 20px;
+}
+
+#aboutContainer {
+    overflow: auto;
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent; 
+}
+
+#aboutContainer:hover {
+    scrollbar-color: #888 #f1f1f1;
+}
+
+#aboutContainer::-webkit-scrollbar {
+    width: 8px;
+    background: transparent; 
+}
+
+#aboutContainer:hover::-webkit-scrollbar {
+    background: #f1f1f1;
+}
+
+#aboutContainer::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+#aboutContainer:hover::-webkit-scrollbar-thumb {
+    background-color: #555;
+}

@@ -1,0 +1,478 @@
+/*MUSIC PLAYER*/
+/*SPOTIFY PLAYER*/
+#spotifyContainer {
+  width: 310px;
+  height: 325px;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 23px;
+  left: 1205px;
+  border-radius: 20px;
+  z-index: 5;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.spotifyMusicPlayer h2 {
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 10px; 
+  color: var(--button-color);
+}
+
+.spotifyMusicPlayer #iframe {
+  align-items: center;
+}
+
+#spotifySettingButton {
+ background-color:var(--button-color);
+  position: absolute;
+  width: 290px;
+  height: 30px;
+  top: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+
+  border-radius: 30px;  
+  color: #ffffff;
+  font-family: "Kodchasan", sans-serif;
+  font-size: 12px;
+}
+
+#spotifySettingButton:hover {
+    background-color: #4b5d8a;
+    cursor: pointer;
+    user-select: none;
+}
+
+#localMusicBut {
+  background-color:var(--button-color);
+  position: absolute;
+  width: 290px;
+  height: 30px;
+  top: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+
+  border-radius: 30px;  
+  color: #ffffff;
+  font-family: "Kodchasan", sans-serif;
+  font-size: 12px;
+}
+
+#localMusicBut:hover {
+  background-color: var(--button-hover);
+  user-select: none;
+  }
+
+/*local music player*/
+/* Container */
+#localContainer {
+  width: 310px;
+  height: 315px;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 23px;
+  left: 1205px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 10px;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+
+}
+
+.localMusicPlayer h2 {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 5px; 
+  color: var(--button-color);
+}
+
+/* Layout inside player */
+.musicPlayerBody {
+  width: 90%;
+  height: 185px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/*progress bar*/
+#progress {
+    width: 270px;
+    position: absolute;
+    top: 245px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+/* LEFT SIDE — Now Playing */
+.nowPlaying {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+#songCover {
+  width: 280px;
+  height: 135px;
+  border-radius: 10px;
+  object-fit: cover;
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  transform: translateX(-50%);
+}
+
+.songInfo {
+  text-align: left;
+  font-family: "Kodchasan", sans-serif;
+  position:absolute;
+  top: 205px;
+  left: 50px;
+  transform: translateX(-50%);
+}
+
+#songTitle {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--button-color);
+}
+
+#songArtist {
+  font-size: 10px;
+  color: #444;
+}
+
+/*controls*/
+.controls {
+  position: absolute;
+  top: 275px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+#prev, #play, #next {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#loop, #list {
+  height: 25px;
+  width: 25px;
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+  background-color: var(--main-color);
+}
+
+#loop {
+  margin-right: 20px;
+}
+
+#loop img {
+  transform: scale(1.2);
+}
+
+#list {
+  margin-left: 20px;
+}
+
+#playlist {
+  width: 100px;
+  position: absolute;
+  top:10px;
+  left: 120px;
+  background-color: var(--button-hover);
+  padding-left: 0;
+
+    border: 2px solid #333;   /* Dark border */
+    border-radius: 8px;       /* Rounded corners */
+    background-color: #fff;   /* Optional: white background */
+    list-style: none;         /* Remove bullets */
+}
+
+.hidden {
+  display: none;
+}
+
+#playlist li:hover {
+    background: #444;
+    user-select: none;
+}
+
+#spotifySwitchButton{
+  width: 70px;
+  height: 30px;
+  background-color: var(--button-hover);
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: "Kodchasan", sans-serif;
+  font-size: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 0px rgba(42, 42, 42, 0.5);
+  position: absolute;
+  top: 208px;
+  right: 15px;
+}
+
+#spotifySwitchButton:hover {
+  background-color: var(--button-color);
+  user-select: none;
+}
+
+#localMusicSettingButton {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: var(--button-color);
+  border-radius: 30px;
+  color: #ffffff;
+  font-family: "Kodchasan", sans-serif;
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1.5px 1.5px 0px rgba(42, 42, 42, 0.5);
+  right: 15px;
+  top: 15px;
+}
+
+/*playlist list*/
+#playlistList {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  height: 35px;
+  background-color: var(--main-color);
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 25px;
+  color: var(--button-color);
+  outline: none;
+  border: none;
+  padding-right: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;   
+
+  border: none;
+  background: transparent;
+
+}
+
+#playlistList::-ms-expand {
+    display: none;
+}
+
+#playlistList:hover {
+  cursor: pointer;
+}
+
+#localMusicSettingButton:hover {
+  background-color: var(--button-hover);
+  user-select: none;  
+}
+
+.musicButton:hover {
+  background-color: #4b5d8a;
+  cursor: pointer;
+}
+
+.musicButton:active {
+  transform: scale(.95);
+}
+
+
+/*Edit music panel*/
+.editMusic {
+  width: 500px;
+  height: 600px;
+  background-color: #939393;
+  position: absolute;
+  z-index: 29;
+  border-radius: 30px;
+  display: none;
+  flex-direction: row;
+  gap: 10px;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+}
+
+.editMusic #closeEditMusic {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+  background-color: var(--button-color);
+  border-radius: 50%;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.editMusic h1 {
+    color: var(--main-color);
+    position: absolute;
+    left: 15px;
+}
+
+.editMusic #linkInput {
+    width: 180px;
+    height: 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 130px;
+    left: 280px;
+}
+
+.editMusic #spotifyModeRadio{
+    position: absolute;
+    transform: scale(1.5);
+    top: 100px;
+    left: 18px;
+}
+
+.editMusic #spotRadioLabel {
+    position: absolute;
+    top: 75px;
+    left: 50px;
+}
+
+.editMusic #localRadioLabel {
+    position: absolute;
+    top: 215px;
+    left: 50px;
+}
+
+.editMusic #localModeRadio{
+    position: absolute;
+    transform: scale(1.5);
+    top: 240px;
+    left: 18px;
+}
+
+#linkLabel {
+    position: absolute;
+    top: 120px;
+    left: 15px;  
+    font-size: 20px;  
+}
+
+.editMusic h3 {
+    top: 250px;
+    left: 15px;
+    position: absolute;
+}
+
+.playlist-grid {
+    position: absolute;
+    top: 300px;
+    display: grid;
+    left: 50%;
+    transform: translateX(-50%);
+    grid-template-columns: repeat(2, 1fr); 
+    row-gap: 15px;
+    column-gap: 20px;
+}
+
+.editMusic p {
+    position: absolute;
+    top: 155px;
+    left: 15px;
+    font-size: 14px;
+}
+
+.editMusic button {
+    box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+}
+
+.playlist-grid button {
+    height: 40px;
+    width: 200px;
+    background-color: #4b5d8a;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#uploadMusicButton {
+    height: 40px;
+    width: 420px;
+    background-color: #4b5d8a;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    border: none;
+    position: absolute;
+    top: 410px;
+    cursor: pointer;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);    
+    justify-content: center;
+    align-items: center;
+}
+
+#saveMusicButton {
+  width: 100px;
+  height: 38px;
+  background-color: var(--button-color);
+  color: #ffffff;
+  z-index: 30;
+  position: absolute;
+  top: 540px;
+  left: 200px;
+  border-radius: 30px;
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+#saveMusicButton:hover {
+  user-select: none;
+  background-color: var(--button-hover);
+}
