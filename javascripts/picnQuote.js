@@ -1,5 +1,5 @@
 //Random Quote Generator
-fetch('randomQuotes.txt')
+fetch('assets/randomQuotes.txt')
 .then(response => response.text())
 .then(text => {
     // Split words by new line
@@ -33,3 +33,4 @@ changePhoto.addEventListener("click", () =>{
       const photo = URL.createObjectURL(file);
       photoDisplay.src = photo;
 });
+
