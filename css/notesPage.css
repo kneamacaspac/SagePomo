@@ -1,11 +1,11 @@
 /*I also added the about page in this file*/
 
 .notesContainer {
-    width: 1000px;   
+    width: 950px;   
     height: 690px; 
     position: absolute;
     top: 5px;        
-    left: 165px;  
+    left: 155px;  
     padding: 20px;
     box-sizing: border-box;
     font-family: 'Kodchasan', sans-serif;
@@ -15,7 +15,7 @@
 
 #notesArea {
     position: absolute;
-    width: 940px;
+    width: 870px;
     left: 50%;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -33,8 +33,8 @@
 }
 
 #aboutContainer {
-    width: 960px;   
-    height: 480px; 
+    width: 890px;   
+    height: 530px; 
     position: absolute;
     top: 50px;
     overflow: auto; 
