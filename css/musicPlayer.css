@@ -1,5 +1,31 @@
 /*MUSIC PLAYER*/
 /*SPOTIFY PLAYER*/
+#musicSettingBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.4); /* darken */
+  backdrop-filter: blur(6px);    /* blur */
+  -webkit-backdrop-filter: blur(6px); /* Safari */
+
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#musicSettingBg.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 #spotifyContainer {
   width: 310px;
   height: 325px;

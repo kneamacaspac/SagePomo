@@ -2,17 +2,22 @@ const closeEditMusicButton = document.getElementById("closeEditMusic");
 
 closeEditMusicButton.addEventListener("click", () => {
     document.querySelector(".editMusic").style.display = "none";
+    document.getElementById("musicSettingBg").style.display = "none";
 });
 
 const spotifySetting = document.getElementById("spotifySettingButton");
 
 spotifySetting.addEventListener("click", () => {
     document.querySelector(".editMusic").style.display = "flex";
+    document.getElementById("musicSettingBg").style.display = "flex";
 });
+
+musicSettingBg.classList.add("active");
 
 const localMusicSetting = document.getElementById("localMusicSettingButton");
 
 localMusicSetting.addEventListener("click", () => {
+    document.getElementById("musicSettingBg").style.display = "flex";
     document.querySelector(".editMusic").style.display = "flex";
 });
 
