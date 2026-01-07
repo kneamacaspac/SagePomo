@@ -172,4 +172,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //EDIT PANEL 
-document.getElementById("editTimerButton").addEventListener("click", () => { document.querySelector(".editTimerPanel").style.display = "flex"; }); document.getElementById("closeEditTimer").addEventListener("click", () => { document.querySelector(".editTimerPanel").style.display = "none"; });
+const editTimerPanel = document.querySelector(".editTimerPanel");
+
+document.getElementById("editTimerButton").addEventListener("click", () => {
+  editTimerPanel.classList.add("show");
+  editTimerPanel.style.display = "flex";
+});
+
+document.getElementById("closeEditTimer").addEventListener("click", () => {
+  editTimerPanel.classList.remove("show");
+});

@@ -284,11 +284,25 @@ body {
   background-color: #939393;
   position: absolute;
   z-index: 29;
+  top: 50%;
+  left: 50%;
   border-radius: 30px;
-  display: none;
   flex-direction: row;
   gap: 10px;
-  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+  box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5); 
+
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+
+  transition: 
+    transform 0.1s ease,
+    opacity 0.1s ease;
+}
+
+.editTimerPanel.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #closeEditTimer {

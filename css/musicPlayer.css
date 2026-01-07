@@ -21,6 +21,11 @@
   justify-content: center;
 }
 
+@keyframes settingPopUp {
+  0% {}
+  100% { transform: scale(3);}
+}
+
 #musicSettingBg.active {
   opacity: 1;
   pointer-events: auto;
