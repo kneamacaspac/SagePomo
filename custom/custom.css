@@ -1,0 +1,108 @@
+#customContainer {
+    position: absolute;
+    width: 950px;
+    height: 655px;
+    top: 25px;
+    left: 155px;
+    z-index: 8;
+    display: flex;
+}
+
+#lightNDarkContainer {
+    height: 100px;
+    width: 900px;
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+}
+
+#themeHeader{
+    font-size: 30px;
+    font-family: "Kodchasan", sans-serif;
+    font-style: bold;
+    color: antiquewhite;
+}
+
+#lightNDarkTheme {
+    background-color: rgb(239, 239, 239);
+    height: 50px;
+    width: 800px;
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+    align-items: center;
+}
+
+#themesContainer {
+    height: 480px;
+    width: 900px;
+    position: absolute;
+    top: 385px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: center;
+}
+
+.themes {
+    width: 250px;
+    height: 145px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 0px 0px rgba(42, 42, 42, 0.5);
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Kodchasan", sans-serif;
+    font-style: bold;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#green {
+    background-color: green;
+}
+
+#purple {
+    background-color: purple;
+}
+
+#pink {
+    background-color: pink;
+}
+
+#black {
+    background-color: rgb(22, 22, 22);
+}
+
+#white {
+    background-color: antiquewhite;
+}
+
+#addColor {
+    background-color: gray;
+}

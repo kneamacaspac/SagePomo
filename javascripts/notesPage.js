@@ -7,13 +7,14 @@ const backToPomo = document.getElementById("pomodoroButton");
 const todo = document.querySelector(".todoContainer");
 const aboutButton = document.getElementById("aboutButton");
 const aboutPage = document.getElementById("aboutContainer");
+const noteCustomPage = document.getElementById("customContainer");
 
 notesButton.addEventListener("click", () => {
   pomoContainer.style.display = "none";
   notesPage.style.display = "block";
-  console.log("clicked");
   todo.style.display = "none";
   aboutPage.style.display = "none";
+  noteCustomPage.style.display = "none";
 });
 
 backToPomo.addEventListener("click", () => {
@@ -21,6 +22,7 @@ backToPomo.addEventListener("click", () => {
   notesPage.style.display = "none";
   aboutPage.style.display = "none";
   todo.style.display = "none";
+  noteCustomPage.style.display = "none";
 });
 
 const notesArea = document.getElementById("notesArea");
@@ -40,4 +42,5 @@ aboutButton.addEventListener("click", () => {
   notesPage.style.display = "none";
   todo.style.display = "none";
   aboutPage.style.display = "block";
+  noteCustomPage.style.display = "none";
 });

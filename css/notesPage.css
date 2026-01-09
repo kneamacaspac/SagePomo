@@ -47,6 +47,7 @@
     overflow: auto;
     scrollbar-width: thin; 
     scrollbar-color: transparent transparent; 
+    color: #bbbbbb;
 }
 
 #aboutContainer:hover {

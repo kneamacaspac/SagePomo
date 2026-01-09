@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
 //EDIT PANEL 
 const editTimerPanel = document.querySelector(".editTimerPanel");
 

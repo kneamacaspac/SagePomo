@@ -10,6 +10,8 @@ const todoHistoryPage = document.getElementById("todoHistoryPage");
 
 const todoAboutPage = document.getElementById("aboutContainer");
 
+const todoCustomPage = document.getElementById("customContainer");
+
 /*TODO ELEMENTS*/
 const todoInput = document.getElementById("todoInput");
 const addTodoBtn = document.getElementById("addTodo");
@@ -37,6 +39,7 @@ tasksButton.addEventListener("click", () => {
   pomoElements.style.display = "none";
   notesContainer.style.display = "none";
   todoAboutPage.style.display = "none";
+  todoCustomPage.style.display = "none";
 
   todoPage.style.display = "block";
   todoHistoryPage.style.display = "none";
